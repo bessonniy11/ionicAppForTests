@@ -1,0 +1,122 @@
+.dishes-wrapper.cart {
+  padding: 50px 10px;
+  ion-toolbar {
+    position: fixed;
+    left: 12px;
+    top: 55px;
+    width: 94%;
+    z-index: 5;
+    padding-left: 0;
+    padding-right: 0;
+    .search {
+      display: flex;
+      padding: 0 10px;
+      ion-input {
+        --padding-start: 10px;
+        --background: #e7e6e8;
+        border-radius: 8px;
+        height: 34px;
+      }
+      ion-icon {
+        margin-left: 10px;
+      }
+      .inactive-search {
+        display: flex;
+        flex: 1;
+        transition: 0.6s;
+      }
+      .hidden-btn {
+        position: absolute;
+        top: 19px;
+        right: -100px;
+        transition: 0.6s;
+      }
+      .active-search {
+        display: flex;
+        flex: 0.9;
+        transition: 0.6s;
+      }
+      .visible-btn {
+        position: absolute;
+        top: 19px;
+        right: 9px;
+        transition: 0.6s;
+      }
+    }
+  }
+  .dish {
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    &__title {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    &__img {
+      position: relative;
+      width: 100%;
+      height: 255px;
+      //overflow: hidden;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      font-size: 14px;
+      box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px, rgb(0 0 0 / 4%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        //overflow: hidden;
+        border-radius: 10px;
+      }
+    }
+    &__desc {
+
+    }
+  }
+}
+
+
+.dice-outline {
+  height: 30px;
+  width: 30px;
+}
+
+.search-overlay {
+  width: 100%;
+  height: 100%;
+  background: #0000003d;
+  position: absolute;
+  opacity: 0;
+}
+
+.dishes-wrapper.list {
+  .dish {
+    padding: 10px;
+    &__title {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    &__img {
+      position: relative;
+      width: 100%;
+      height: 255px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      border-radius: 5px;
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &__desc {
+
+    }
+  }
+}

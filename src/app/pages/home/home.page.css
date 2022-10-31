@@ -1,0 +1,27 @@
+.ion-content-wrapper {
+  padding: 15px 10px; }
+
+ion-modal {
+  --height: 55%;
+  --width: 95%;
+  --border-radius: 4px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
+
+ion-modal {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  opacity: 1; }
+
+ion-modal ion-toolbar {
+  --background: #3880FF;
+  --color: white; }
+
+.auth-modal-no-account ion-text {
+  font-size: 12px; }
+
+.modal-enter-btn {
+  position: absolute;
+  bottom: 0;
+  width: 99%; }
+
+/*# sourceMappingURL=home.page.css.map */

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button (click)="navigation.goToBack()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Все рецепты</ion-title>
+    <ion-icon slot="end" name="color-wand-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item button *ngFor="let item of movies" (click)="goToThisItem(item.id)">
+      <ion-avatar slot="start">
+        <img [src]="imageBaseUrl + '/w92' + item.poster_path" alt="">
+      </ion-avatar>
+
+      <ion-label>
+        {{item.title}}
+        <p>{{item.release_date | date:'dd.MM.yyyy'}}</p>
+      </ion-label>
+
+      <ion-badge slot="end">
+        {{item.vote_average}}
+      </ion-badge>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data..">
+
+    </ion-infinite-scroll-content>
+
+  </ion-infinite-scroll>
+
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button (click)="navigation.goToBack()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Все рецепты</ion-title>
+    <ion-icon class="dice-outline" slot="end" name="dice-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="dishes-wrapper cart">
+
+    <ion-toolbar >
+
+      <div class="search">
+
+        <ion-input
+          placeholder="Search"
+          [(ngModel)]="search"
+          (ionFocus)="toggleSearch()"
+          (keydown)="keypress($event)"
+          [class.active-search]="searching"
+          [class.inactive-search]="!searching">
+          <ion-icon name="search"></ion-icon>
+        </ion-input>
+
+        <ion-icon
+          [ngClass]="{'visible-btn': searching, 'hidden-btn': !searching}"
+          name="close-outline"
+          (click)="outSearch()">
+        </ion-icon>
+
+      </div>
+    </ion-toolbar>
+
+<!--    <div class="search-overlay" #overlay (click)="toggleSearch()"></div>-->
+
+    <ion-card class="dish" *ngFor="let dish of dishes; index as index" (click)="goToThisItem(dish.id)">
+      <div class="dish__title">
+        {{dish.title}}
+      </div>
+      <div class="dish__img">
+        <img [src]="imageBaseUrl + '/w400' + dish.poster_path"
+             alt="">
+      </div>
+      <div class="dish__desc">
+        {{dish.overview}}
+      </div>
+    </ion-card>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles">
+
+    </ion-infinite-scroll-content>
+
+  </ion-infinite-scroll>
+
+</ion-content>
